@@ -143,7 +143,7 @@ public class JournalDev {
      * Fibonacci using stream
      */
     private static void printFibonacciUsingStream(int limit) {
-        System.out.printf("Fibonacci: %s %n", fibonacciString(limit));
+        System.out.printf("Fibonacci from Stream: %s %n", fibonacciString(limit));
     }
 
     private static String fibonacciString(int limit) {
