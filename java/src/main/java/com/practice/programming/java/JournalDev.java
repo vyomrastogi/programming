@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class JournalDev {
@@ -36,6 +37,16 @@ public class JournalDev {
         // fibonacci using stream
         printFibonacciUsingStream(13);
         printFibonacciUsingStream(25);
+        printLineBreak();
+        //check palindrome
+        checkPalindrome("Return");
+        checkPalindrome("AruRa");
+        checkPalindrome("arura");
+        printLineBreak();
+        //factorial
+        factorial(1);
+        factorial(10);
+        factorial(15);
         printLineBreak();
     }
 
@@ -144,4 +155,27 @@ public class JournalDev {
                 .map(String::valueOf) // conver to string
                 .collect(Collectors.joining(",")); // comma separated 
     }
+
+    /**
+     * Palindrome String
+     */
+    private static void checkPalindrome(String input){
+        char[] inputChars = input.toCharArray();
+        for(int i = 0 ; i<inputChars.length/2; i++){
+            if(inputChars[i]!=inputChars[inputChars.length-1-i]){
+                System.out.printf("input string '%s' is not a palindrome %n",input);
+                return;
+            }                
+        }
+        System.out.printf("input string '%s' is a palindrome %n",input);
+    }
+
+    /**
+     * Factorial
+     */
+    private static void factorial(int input){
+        int fact = input==1 ? 1 : IntStream.range(1, input).reduce(1,(i,j)->i*j);
+        System.out.printf("Factorial of '%d' = %d %n",input,fact);
+    }
+
 }
