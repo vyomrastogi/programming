@@ -1,5 +1,7 @@
 ### Practice Repository
 
+This repository contains alogrithims and practice classes
+
 ```txt
 Sample JournalDev.java Output 
 
